@@ -65,6 +65,7 @@ namespace WindowsFormsDamier
             }else
             {
                 this.textBoxNbColonne.Text = "";
+                this.textBoxNbLigne.Text = "";
                 this.textBoxNbColonne.Focus();
             }
 
