@@ -39,8 +39,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.listBoxColorFonce = new System.Windows.Forms.ListBox();
             this.panelDamier.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -133,12 +135,22 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.listBoxColorFonce);
             this.groupBox2.Location = new System.Drawing.Point(521, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 83);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Choix couleur foncé";
+            // 
+            // listBoxColorFonce
+            // 
+            this.listBoxColorFonce.FormattingEnabled = true;
+            this.listBoxColorFonce.ItemHeight = 16;
+            this.listBoxColorFonce.Location = new System.Drawing.Point(6, 25);
+            this.listBoxColorFonce.Name = "listBoxColorFonce";
+            this.listBoxColorFonce.Size = new System.Drawing.Size(188, 52);
+            this.listBoxColorFonce.TabIndex = 0;
             // 
             // FormDamier
             // 
@@ -158,6 +170,7 @@
             this.Text = "Damier";
             this.panelDamier.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,6 +189,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ListBox listBoxColorFonce;
     }
 }
 

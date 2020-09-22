@@ -26,8 +26,7 @@ namespace WindowsFormsDamier
             KnownColor[] p = new KnownColor[colorsArray.Length];
             Array.Copy(colorsArray, p, colorsArray.Length);
             listBoxColorClair.DataSource = colorsArray;
-            listBoxColorFonce.DataSource = colorsArray;
-         
+            listBoxColorFonce.DataSource = p;
         }
 
 
@@ -36,6 +35,9 @@ namespace WindowsFormsDamier
             int nbDamier, nbLigne;
             Point p;    // coordonnée du bouton
             Size taille;    // taille du bouton
+
+            Color clair = Color.FromName(listBoxColorClair.SelectedItem.ToString());
+            Color fonce = Color.FromName(listBoxColorFonce.SelectedItem.ToString());
 
             // bouton de creation du damier
             if ( int.TryParse(this.textBoxNbColonne.Text,out nbDamier)&& int.TryParse(this.textBoxNbLigne.Text, out nbLigne) )
@@ -48,7 +50,7 @@ namespace WindowsFormsDamier
                 {
                     for (int i = 0; i < nbDamier; i++)
                     {
-                        ButtonDamier bD = new ButtonDamier(Color.White, Color.Black);
+                        ButtonDamier bD = new ButtonDamier(clair, fonce);
                         bD.Location = p;
                         bD.Size = taille;
                         this.panelDamier.Controls.Add(bD);
