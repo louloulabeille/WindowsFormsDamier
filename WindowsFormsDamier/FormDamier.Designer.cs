@@ -40,6 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBoxColorFonce = new System.Windows.Forms.ListBox();
+            this.buttonColorClair = new System.Windows.Forms.Button();
+            this.buttonColorFonce = new System.Windows.Forms.Button();
             this.panelDamier.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -102,6 +104,7 @@
             this.listBoxColorClair.Name = "listBoxColorClair";
             this.listBoxColorClair.Size = new System.Drawing.Size(142, 43);
             this.listBoxColorClair.TabIndex = 5;
+            this.listBoxColorClair.Visible = false;
             // 
             // groupBox1
             // 
@@ -146,7 +149,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBoxColorFonce);
-            this.groupBox2.Location = new System.Drawing.Point(391, 10);
+            this.groupBox2.Location = new System.Drawing.Point(363, 11);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -163,12 +166,35 @@
             this.listBoxColorFonce.Name = "listBoxColorFonce";
             this.listBoxColorFonce.Size = new System.Drawing.Size(142, 43);
             this.listBoxColorFonce.TabIndex = 0;
+            this.listBoxColorFonce.Visible = false;
+            // 
+            // buttonColorClair
+            // 
+            this.buttonColorClair.Location = new System.Drawing.Point(518, 24);
+            this.buttonColorClair.Name = "buttonColorClair";
+            this.buttonColorClair.Size = new System.Drawing.Size(66, 48);
+            this.buttonColorClair.TabIndex = 12;
+            this.buttonColorClair.Text = "Couleur clair";
+            this.buttonColorClair.UseVisualStyleBackColor = true;
+            this.buttonColorClair.Click += new System.EventHandler(this.EventDialogColorClair);
+            // 
+            // buttonColorFonce
+            // 
+            this.buttonColorFonce.Location = new System.Drawing.Point(590, 24);
+            this.buttonColorFonce.Name = "buttonColorFonce";
+            this.buttonColorFonce.Size = new System.Drawing.Size(66, 48);
+            this.buttonColorFonce.TabIndex = 13;
+            this.buttonColorFonce.Text = "Couleur foncé";
+            this.buttonColorFonce.UseVisualStyleBackColor = true;
+            this.buttonColorFonce.Click += new System.EventHandler(this.EventDialogColorFonce);
             // 
             // FormDamier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 487);
+            this.Controls.Add(this.buttonColorFonce);
+            this.Controls.Add(this.buttonColorClair);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -181,6 +207,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormDamier";
             this.Text = "Damier";
+            this.Click += new System.EventHandler(this.EventDialogColorFonce);
             this.panelDamier.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -203,6 +230,8 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox listBoxColorFonce;
+        private System.Windows.Forms.Button buttonColorClair;
+        private System.Windows.Forms.Button buttonColorFonce;
     }
 }
 

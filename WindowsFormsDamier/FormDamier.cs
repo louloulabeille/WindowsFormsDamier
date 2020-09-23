@@ -36,6 +36,8 @@ namespace WindowsFormsDamier
 
             Color clair = Color.FromName(listBoxColorClair.SelectedItem.ToString());
             Color fonce = Color.FromName(listBoxColorFonce.SelectedItem.ToString());
+            clair =  this.groupBox1.BackColor ;
+            fonce =  this.groupBox2.BackColor ;
 
             // bouton de creation du damier
             if ( int.TryParse(this.textBoxNbColonne.Text,out nbDamier)&& int.TryParse(this.textBoxNbLigne.Text, out nbLigne) )
@@ -61,7 +63,6 @@ namespace WindowsFormsDamier
                     p.X = 0;
                     p.Y += taille.Height;
                 }
-
             }else
             {
                 this.textBoxNbColonne.Text = "";
@@ -79,6 +80,34 @@ namespace WindowsFormsDamier
             TextBox tB = sender as TextBox;
             textBoxNbLigne.Text = tB.Text;
 
+        }
+
+        private void EventDialogColorClair(object sender, EventArgs e)
+        {
+            // ouvre une boite de dialogue color colorDialog
+            ColorDialog cD = new ColorDialog();
+            cD.AllowFullOpen = false;
+            cD.ShowHelp = true;
+            cD.Color = groupBox1.BackColor;
+
+            if (cD.ShowDialog() == DialogResult.OK)
+            {
+                groupBox1.BackColor = cD.Color;
+            }
+        }
+
+        private void EventDialogColorFonce(object sender, EventArgs e)
+        {
+            // ouvre une boite de dialogue color colorDialog
+            ColorDialog cD = new ColorDialog();
+            cD.AllowFullOpen = false;
+            cD.ShowHelp = true;
+            cD.Color = groupBox2.BackColor;
+
+            if (cD.ShowDialog() == DialogResult.OK)
+            {
+                groupBox2.BackColor = cD.Color;
+            }
         }
     }
 }
