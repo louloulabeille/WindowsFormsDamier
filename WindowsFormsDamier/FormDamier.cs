@@ -32,9 +32,7 @@ namespace WindowsFormsDamier
 
         private void EventCreationDamier(object sender, EventArgs e)
         {
-            int nbDamier, nbLigne;
-            Point p;    // coordonnée du bouton
-            Size taille;    // taille du bouton
+            int nbDamier, nbLigne;   
 
             Color clair = Color.FromName(listBoxColorClair.SelectedItem.ToString());
             Color fonce = Color.FromName(listBoxColorFonce.SelectedItem.ToString());
@@ -43,8 +41,10 @@ namespace WindowsFormsDamier
             if ( int.TryParse(this.textBoxNbColonne.Text,out nbDamier)&& int.TryParse(this.textBoxNbLigne.Text, out nbLigne) )
             {
                 this.panelDamier.Controls.Clear();
-                p = new Point(0, 9);
-                taille = new Size (this.panelDamier.Width / nbDamier-3, this.panelDamier.Width / nbDamier-3);
+                // coordonnée du bouton
+                Point p = new Point(0, 9);
+                // taille du bouton
+                Size taille = new Size (this.panelDamier.Width / nbDamier-3, this.panelDamier.Width / nbDamier-3);
 
                 for (int j = 0;j< nbLigne; j++)
                 {
@@ -69,6 +69,15 @@ namespace WindowsFormsDamier
                 this.textBoxNbColonne.Focus();
             }
 
+
+        }
+
+        private void EventTextBoxModifier(object sender, EventArgs e)
+        {
+            // recopie le texte box colonne dans le textboxligne pour
+            // faire une saisie semi auto
+            TextBox tB = sender as TextBox;
+            textBoxNbLigne.Text = tB.Text;
 
         }
     }
